@@ -72,7 +72,7 @@ h1 {
   max-width: 1439px;
 }
 
-p {
+.countdown > div > p {
   font-family: "Red Hat Text";
   font-weight: 700;
   font-size: 14px;
@@ -105,4 +105,14 @@ p {
   cursor: pointer;
   filter: brightness(0) saturate(100%) invert(67%) sepia(53%) saturate(5373%)
     hue-rotate(311deg) brightness(99%) contrast(98%);
+}
+
+p {
+  font-family: "Red Hat Text";
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 71px;
+  letter-spacing: -2.4px;
+  text-align: center;
+  color: rgba(251, 94, 132, 1);
 }
