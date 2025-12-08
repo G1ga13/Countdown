@@ -10,39 +10,30 @@ let interval = setInterval(() => {
     return;
   }
 
-  p.textContent = index;
   index--;
-
   if (index < 0) {
     index = 59;
-    p.textContent = index;
     indexMinute--;
-    m.textContent = indexMinute;
   }
 
   if (indexMinute < 0) {
     indexMinute = 59;
-    m.textContent = indexMinute;
     indexHour--;
-    h.textContent = indexHour;
   }
 
   if (indexHour < 0) {
     indexHour = 23;
-    h.textContent = indexHour;
     indexDay--;
-    d.textContent = indexDay;
   }
 
   if (indexDay < 0) {
     indexDay = 0;
-    d.textContent = indexDay;
   }
 
-  if (index === 0 && indexMinute === 0 && indexHour === 0 && indexDay === 0) {
-    clearInterval(interval);
-    return;
-  }
+  p.textContent = index;
+  m.textContent = indexMinute;
+  h.textContent = indexHour;
+  d.textContent = indexDay;
 }, 1000);
 
 let minute = document.getElementById("minutes");
