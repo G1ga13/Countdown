@@ -2,15 +2,45 @@ let second = document.getElementById("seconds");
 let p = document.createElement("p");
 second.appendChild(p);
 
-let index = prompt("შეიყვანე წამი");
+let index = Number(prompt("შეიყვანე წამი"));
 
 let interval = setInterval(() => {
-  p.textContent = index;
+  if (index === 0 && indexMinute === 0 && indexHour === 0 && indexDay === 0) {
+    clearInterval(interval);
+    return;
+  }
 
+  p.textContent = index;
   index--;
 
-  if (index === -1) {
+  if (index < 0) {
+    index = 59;
+    indexMinute--;
+    m.textContent = indexMinute;
+  }
+
+  if (indexMinute < 0) {
+    indexMinute = 59;
+    m.textContent = indexMinute;
+    indexHour--;
+    h.textContent = indexHour;
+  }
+
+  if (indexHour < 0) {
+    indexHour = 23;
+    h.textContent = indexHour;
+    indexDay--;
+    d.textContent = indexDay;
+  }
+
+  if (indexDay < 0) {
+    indexDay = 0;
+    d.textContent = indexDay;
+  }
+
+  if (index === 0 && indexMinute === 0 && indexHour === 0 && indexDay === 0) {
     clearInterval(interval);
+    return;
   }
 }, 1000);
 
@@ -18,46 +48,19 @@ let minute = document.getElementById("minutes");
 let m = document.createElement("p");
 minute.appendChild(m);
 
-let indexMinute = prompt("შეიყვანე წუთი");
-
-let intervalSecond = setInterval(() => {
-  m.textContent = indexMinute;
-
-  indexMinute--;
-
-  if (indexMinute === -1) {
-    clearInterval(intervalSecond);
-  }
-}, 1000);
+let indexMinute = Number(prompt("შეიყვანე წუთი"));
+m.textContent = indexMinute;
 
 let hour = document.getElementById("hours");
 let h = document.createElement("p");
 hour.appendChild(h);
 
-let indexHour = prompt("შეიყვანე საათი");
-
-let intervalHour = setInterval(() => {
-  h.textContent = indexHour;
-
-  indexHour--;
-
-  if (indexHour === -1) {
-    clearInterval(intervalHour);
-  }
-}, 1000);
+let indexHour = Number(prompt("შეიყვანე საათი"));
+h.textContent = indexHour;
 
 let day = document.getElementById("days");
 let d = document.createElement("p");
 day.appendChild(d);
 
-let indexDay = prompt("შეიყვანე დღე");
-
-let intervalDay = setInterval(() => {
-  d.textContent = indexDay;
-
-  indexDay--;
-
-  if (indexDay === -1) {
-    clearInterval(intervalDay);
-  }
-}, 1000);
+let indexDay = Number(prompt("შეიყვანე დღე"));
+d.textContent = indexDay;
