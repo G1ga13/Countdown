@@ -15,6 +15,7 @@ let interval = setInterval(() => {
 
   if (index < 0) {
     index = 59;
+    p.textContent = index;
     indexMinute--;
     m.textContent = indexMinute;
   }
